@@ -1,11 +1,14 @@
-//smooth scroll  page
+const scrollFunc = () => {
+    //smooth scroll  page
 const links = document.querySelectorAll('.header-menu__item a');
 const addLink = document.querySelector('.card-details__link-characteristics');
-let arr = [];
-for (let i = 0; i < links.length; i++) {
-    arr.push(links[i]);
-}
-arr.push(addLink);
+let arr = [...links, addLink];
+console.log('arr', arr)
+
+// for (let i = 0; i < links.length; i++) {
+//     arr.push(links[i]);
+// }
+// arr.push(addLink);
 seamless.polyfill();
 
 arr.forEach((element)=> {
@@ -35,3 +38,6 @@ arr.forEach((element)=> {
     })
 })
  
+
+}
+scrollFunc()
