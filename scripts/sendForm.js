@@ -24,19 +24,19 @@ const sendForm = () => {
             console.log('span', span.textContent)
             const input = label.querySelector('input');
             sendMessage[span.textContent] = input.value
-            
-
+            modal.style.display = 'none';
         })
+        modalForm.reset()
         fetch('https://jsonplaceholder.typicode.com/posts', {
-  method: 'POST',
+            method: 'POST',
             body: JSON.stringify({
                 sendMessage
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then(() => console.log('submit'))
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+            .then(() => console.log('submit'))
     })
 }
 sendForm()
